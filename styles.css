@@ -1,0 +1,299 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    scroll-padding-top: 60px;
+    /* offset for fixed header height */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+header {
+    max-width: 100%;
+    overflow-x: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-wrap: wrap;
+}
+
+header {
+    background-color: #003DA5;
+    /* Warna biru BPS */
+    color: white;
+    padding: 10px 40px 10px 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: flex-start;
+}
+
+.header-logo {
+    height: 60px;
+    margin-right: 15px;
+}
+
+.header-text {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: left;
+}
+
+nav {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+/* Burger menu button */
+.burger {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1100;
+}
+
+/* Responsive styles for burger menu */
+@media (max-width: 600px) {
+    nav {
+        display: none !important;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #003DA5;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        z-index: 1001;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+    }
+
+    nav.show {
+        display: flex !important;
+    }
+
+    nav a {
+        margin: 10px 0;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid #005EB8;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1100;
+    }
+
+    body {
+        padding-top: 60px;
+    }
+}
+
+.hero {
+    background-color: #005EB8;
+    /* Warna biru lebih terang */
+    color: white;
+    padding: 90px 20px 30px 20px;
+    /* added top padding to offset fixed header */
+    text-align: center;
+}
+
+@media (min-width: 600px) and (max-width: 1303px) {
+    .hero {
+        padding-top: 140px;
+        /* further increase top padding to prevent header overlap */
+    }
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #003DA5;
+    /* Warna judul */
+}
+
+.hero-text {
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #003DA5;
+    /* Warna tombol */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005EB8;
+    /* Warna tombol saat hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #003DA5;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries untuk Responsif */
+@media (max-width: 1024px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header-left {
+        justify-content: center;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    nav a {
+        margin: 5px 10px;
+    }
+
+    .hero {
+
+        padding: 40px 10px;
+        padding-top: 200px;
+    }
+
+    section {
+        margin: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    header {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: 10px 10px 10px 50px;
+    }
+
+    .header-left {
+        flex: 1 1 100%;
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    .header-text {
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    .burger {
+        left: 10px;
+        top: 10px;
+        transform: none;
+        position: absolute;
+    }
+
+    .hero {
+        padding: 50px 10px;
+    }
+
+    section {
+        margin: 10px;
+    }
+}
+
+/* Center iframe and make responsive */
+#absen iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 640px;
+    height: 1420px;
+}
